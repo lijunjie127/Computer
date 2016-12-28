@@ -5,67 +5,22 @@ public class JavaComputer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String str1 = "0x1";
-		String str2 = "0xfeef";
+//		String str1 = "0xfe";
+//		String str2 = "0xe";
 //		System.out.println(Util_operation.add(str1, str2));//正数加法运算完成！
-//		System.out.println(Util_operation.xOr(str1, str2));//正数异或运算完成！
+//		System.out.println(Util_operation.del(str1, str2));//正数减法运算完成！
 //		System.out.println(Util_operation.mul(str1, str2));//正数乘法运算完成！
-		System.out.println(Util_operation.del(str1, str2));//正数减法运算完成！
+//		System.out.println(Util_operation.xOr(str1, str2));//正数异或运算完成！
+//		System.out.println(Util_operation.weiYu(str1, str2));//正数按位与运算  完成！
+//		System.out.println(Util_operation.weiOr(str1, str2));//正数按位或运算  完成！
+//		System.out.println(Util_operation.div(str1, str2));//正数取模运算  完成！
+//		System.out.println(Util_operation.yu(str1, str2));//正数取余运算  完成！
+		
+		String str3 = "0xfffffffffffe";
+		System.out.println(Util_operation.fan(str3));//正数取余运算
 	}
 	
-	/**
-	 * "/"运算
-	 * @param str1
-	 * @param str2
-	 * @return str1 / str2
-	 */
-	public static String mul(String str1, String str2){
-		return str2;
-		
-	}
 	
-	/**
-	 * "%"运算
-	 * @param str1
-	 * @param str2
-	 * @return str1 % str2
-	 */
-	public static String yu2(String str1, String str2){
-		return str2;
-		
-	}
-	
-	/**
-	 * "&"运算
-	 * @param str1
-	 * @param str2
-	 * @return str1 & str2
-	 */
-	public static String weiYu3(String str1, String str2){
-		return str2;
-		
-	}
-	
-	/**
-	 * "|"运算
-	 * @param str1
-	 * @param str2
-	 * @return str1 | str2
-	 */
-	public static String weiOr(String str1, String str2){
-		return str2;
-		
-	}
-	
-	/**
-	 * "~"运算
-	 * @param str
-	 * @return ~str
-	 */
-	public static String fan(String str){
-		return str;
-		
-	}
 	
 //	/**
 //	 * 判断两个字符串，第一个字符串是否大于第二个
