@@ -1,3 +1,4 @@
+package cn.lijunjie.util;
 
 public class Util_operation {
 	/**
@@ -191,7 +192,7 @@ public class Util_operation {
 	 * @param str2
 	 * @return str1 % str2
 	 */
-	public static String yu(String str1, String str2){
+	public static String div_yu(String str1, String str2){
 		int[] data1 = Util_base.stringToIntArray(str1);
 		int[] data2 = Util_base.stringToIntArray(str2);
 		
@@ -199,12 +200,12 @@ public class Util_operation {
 			return str1;
 		} else {
 			for(int i = data1.length - data2.length ; i >= 0 ; i --){
-//				System.out.println("第" + i + "次进入for循环");
+				System.out.println("第" + i + "次进入for循环");
 				int temp_i = i;
 				String temp_str2 = str2;
 				while(temp_i-- > 0){
 					temp_str2 = temp_str2 + "0";
-//					System.out.println("temp_i:" + temp_i + ", temp_str2:" + temp_str2);//--------------------
+					System.out.println("temp_i:" + temp_i + ", temp_str2:" + temp_str2);//--------------------
 				}
 				while(true){
 					if(str1.length() > temp_str2.length() || str1.compareToIgnoreCase(temp_str2) >= 0){//说明还要继续减
@@ -240,9 +241,11 @@ public class Util_operation {
 		
 		for(int i = 0 ; i < data2.length ; i ++){
 			data[i] = data1[i] & data2[i];
+//			Util_base.display(data);
 		}
 		for(int i = data2.length; i < data1.length ; i ++){
 			data[i] = data1[i] & 0;
+//			Util_base.display(data);
 		}
 		
 		return Util_base.intArrayToString(data);

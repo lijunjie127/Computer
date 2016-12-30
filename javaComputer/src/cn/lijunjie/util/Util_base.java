@@ -1,9 +1,42 @@
+package cn.lijunjie.util;
 
 public class Util_base {
+	
+	
+	/**
+	 * 判断两个字符串，第一个字符串组成的数字大小是否大于第二个
+	 * @param str1
+	 * @param str2
+	 * @return true or false
+	 */
+	public static boolean judgeFirstBig(String str1, String str2) {
+		boolean flag = false;
+		if(str1.length() > str2.length()) {
+			flag = true;
+		} else if(str1.compareToIgnoreCase(str2) > 0) {
+			flag = true;
+		}
+		return flag;
+	}
+	
+	/**
+	 * 字符串的格式化，全部变为大写，去除0x字符前缀，去除空格，替换中文括号为英文括号
+	 * @param str
+	 * @return str
+	 */
+	public static String initFormat(String str) {
+		str = str.replace(" ", "");//去除空格
+		str = str.replace("（", "(");
+		str = str.replace("）", ")");//替换中文括号
+		str = str.toUpperCase();//全部变为大写
+		str = str.replace("0X", "");//去除十六进制前缀
+		return str;
+	}
+	
 	/**
 	 * @param length1
 	 * @param length2
-	 * @return 两者中较大的那个
+	 * @return 两者中长度较大的那个
 	 */
 	public static int max(int length1, int length2) {
 		if(length1 > length2)
@@ -15,7 +48,7 @@ public class Util_base {
 	/**
 	 * @param length1
 	 * @param length2
-	 * @return 两者中较小的那个
+	 * @return 两者中长度较小的那个
 	 */
 	public static int min(int length1, int length2) {
 		if(length1 < length2)
@@ -41,8 +74,6 @@ public class Util_base {
 	 * @return 
 	 */
 	public static int[] stringToIntArray (String str){
-		str = str.toUpperCase();//全部变为大写
-		str = str.replace("0X", "");//去掉十六进制的前缀
 		char[] dataChar = str.toCharArray(); //字符串转字符数组
 		int [] data = new int [dataChar.length]; //新建整型数组
 		for(int i = 0 ; i < dataChar.length ; i++) {
@@ -74,7 +105,6 @@ public class Util_base {
 				str = data[i] + str;
 			}
 		}
-		str = "0X" + str;
 		return str;
 	}
 	
@@ -93,6 +123,12 @@ public class Util_base {
 			case 'D' : i = 13; break; 
 			case 'E' : i = 14; break; 
 			case 'F' : i = 15; break; 
+			case 'a' : i = 10; break; 
+			case 'b' : i = 11; break; 
+			case 'c' : i = 12; break; 
+			case 'd' : i = 13; break; 
+			case 'e' : i = 14; break; 
+			case 'f' : i = 15; break; 
 			default : i = Integer.valueOf(character) - 48; break; 
 		} 
 		return i;
